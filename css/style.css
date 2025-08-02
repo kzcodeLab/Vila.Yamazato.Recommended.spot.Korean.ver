@@ -1,0 +1,138 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f8f9fa;
+}
+
+header.py-5 {
+    background-color: #353742;
+    color: #ffffff;
+}
+
+main {
+    padding: 2rem 1rem; /* Add horizontal padding */
+}
+
+section {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin: 0 auto 2rem auto; /* Center sections and add bottom margin */
+    max-width: 1200px; /* Set a max-width for content sections */
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 1rem;
+}
+
+/* General list styles */
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Category navigation list */
+#spot-categories .item-list {
+    justify-content: center; /* Center the 5 cards */
+}
+
+/* Spot details lists (3-column) */
+section:not(#spot-categories) .item-list {
+    justify-content: flex-start; /* Align items to the start */
+}
+
+
+/* General card styles */
+.item-card {
+    background-color: #f0f0f0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Category card specific styles */
+.category-card {
+    width: 180px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+    text-align: center;
+}
+
+
+/* Spot detail card specific styles (3-column) */
+section:not(#spot-categories) .item-card {
+    flex-grow: 0; /* Do not allow to grow */
+    /* Calculation for a 3-column layout with a 1.5rem gap */
+    flex-basis: calc(33.333% - (1.5rem * 2 / 3));
+    justify-content: space-between;
+}
+
+.item-card img {
+    width: 100%;
+    height: 250px; /* Further increased height for larger photos */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.item-card h5 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    flex-grow: 1; /* Allow title to grow to align buttons */
+}
+
+.item-card p {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.item-card .btn {
+    align-self: center;
+}
+
+footer {
+    background-color: #353742 !important;
+    color: white;
+}
+
+/* Responsive adjustments for 3-column grid */
+@media (max-width: 992px) {
+    section:not(#spot-categories) .item-card {
+        /* 2 columns on medium screens */
+        flex-basis: calc(50% - (1.5rem / 2));
+    }
+}
+
+@media (max-width: 768px) {
+    section:not(#spot-categories) .item-card {
+        /* 1 column on small screens */
+        flex-basis: 100%;
+    }
+}
